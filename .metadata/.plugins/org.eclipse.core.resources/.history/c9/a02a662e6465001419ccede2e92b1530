@@ -1,8 +1,7 @@
 /**
  * 
  * @author Derek Wider
- * APCS lab 7.1
- * 11/5/14
+ *
  */
 public class Order{
    private int widgets; 
