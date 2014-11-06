@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class GCD
+{
+   public static void main(String[] args) throws InterruptedException
+   {
+      Scanner in = new Scanner(System.in);
+    	  System.out.println("Enter the first integer: ");
+          int x = in.nextInt();
+          System.out.println("x = " + x);
+          System.out.println("Enter the second integer: ");
+          int y = in.nextInt();
+          System.out.println("y = " + y); 
+    	  int large = 0;
+    	  int small = 0;
+          while (x != 0 && y != 0){
+        	  if(x>=y){
+        		  large = x;
+        		  small = y;
+        		  x = large - small;
+            	  y = small;
+        	  }
+        	  else{
+        		  large = y;
+        		  small = x;
+        		  y = large - small;
+            	  x = small;
+        	  }
+          }
+          if(x>=y){
+    		 System.out.println("The GCD is: " + x);
+          }
+    	  else{
+    		 System.out.println("The GCD is: " + y);
+    	  }    
+   }
+      
+   
+}
+

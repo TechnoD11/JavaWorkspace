@@ -1,6 +1,8 @@
+/**
+ * @author Derek Wider
+ */
 import java.text.DecimalFormat;
 import java.util.Scanner;
-
 
 public class OrderRunner {
 
