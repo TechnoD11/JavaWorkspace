@@ -1,0 +1,37 @@
+import java.util.Random;
+
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class GuessingGame {
+	private int luckyNumber;
+	Random rand = new Random();
+	public GuessingGame(){
+		luckyNumber = 0;
+	}
+	public void generateNumber(){
+		luckyNumber = rand.nextInt(100);
+	}
+	public boolean isInRange(boolean isPlayerHuman){
+		boolean inRange = false;
+		return inRange;
+	}
+	public void printGreeting() throws InterruptedException{
+		String greeting = "Shall we play a game?";
+		System.out.println(greeting.substring(0, 5));
+		Thread.sleep(300);
+		System.out.println(greeting.substring(6, 8));
+		Thread.sleep(300);
+		System.out.println(greeting.substring(9, 13));
+		Thread.sleep(300);
+		System.out.println(greeting.substring(14, 16));
+		Thread.sleep(300);
+		System.out.println(greeting.substring(16, 21));
+		System.out.println("press 1 to kill yourself and 2 to BLAZE IT 420");
+	}
+	
+	
+	 
+}

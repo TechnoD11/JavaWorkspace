@@ -1,0 +1,13 @@
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class GuessingGame {
+	private int luckyNumber = 0;
+	public GuessingGame(int number){
+		luckyNumber = number;
+	}
+	
+	 
+}

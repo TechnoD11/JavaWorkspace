@@ -1,0 +1,16 @@
+import java.util.Random;
+
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class GuessingGameRunner {
+
+	public static void main(String[] args) throws InterruptedException {
+		GuessingGame game = new GuessingGame();
+		game.printGreeting();
+		
+	}
+
+}

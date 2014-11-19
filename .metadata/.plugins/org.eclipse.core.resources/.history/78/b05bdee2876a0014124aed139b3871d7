@@ -1,0 +1,26 @@
+import java.util.Random;
+
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class GuessingGameRunner {
+
+	public static void main(String[] args) throws InterruptedException {
+		GuessingGame game = new GuessingGame();
+		String greeting = "Shall we play a game?";
+		//for(int i = 0; i <= 4; i++){
+			System.out.println(greeting.substring(0, 5));
+			Thread.sleep(300);
+			System.out.println(greeting.substring(6, 8));
+			Thread.sleep(300);
+			System.out.println(greeting.substring(9, 13));
+			Thread.sleep(300);
+			System.out.println(greeting.substring(14, 16));
+			Thread.sleep(300);
+			System.out.println(greeting.substring(16, 21));
+		//}
+	}
+
+}

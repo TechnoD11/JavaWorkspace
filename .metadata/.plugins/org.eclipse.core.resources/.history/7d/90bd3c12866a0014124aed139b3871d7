@@ -1,0 +1,14 @@
+import java.util.Random;
+
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class GuessingGameRunner {
+
+	public static void main(String[] args) {
+		GuessingGame game = new GuessingGame();
+	}
+
+}

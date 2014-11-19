@@ -1,0 +1,21 @@
+import java.util.Random;
+
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class GuessingGameRunner {
+
+	public static void main(String[] args) {
+		Random rand = new Random();
+		int luckyNumber = rand.nextInt(100);
+		GuessingGame game = new GuessingGame(luckyNumber);
+		System.out.println(luckyNumber);
+		while(luckyNumber != 0){
+			System.out.println(luckyNumber);
+			luckyNumber = rand.nextInt(100);
+		}
+	}
+
+}
