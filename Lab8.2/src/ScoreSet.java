@@ -17,23 +17,27 @@ public class ScoreSet {
 
 	public double averageWithoutLowest2() {
 		double sum = 0;
-		int lowestVal = scores.get(0); 
-		int secondLowestVal = scores.get(0); //creates local variables to store lowest and second lowest values
-		for(int i = 0; i < scores.size(); i++){ //iterate through the array list
-			if(scores.get(i) < lowestVal){
-				lowestVal = scores.get(i); //if its the lowest value, put it in the lowest value variable
+		double average = 0;
+		if(scores.size() > 2){ //check to make sure there are more than 2 members in the arraylist. if not, return 0
+			int lowestVal = scores.get(0); 
+			int secondLowestVal = scores.get(0); //creates local variables to store lowest and second lowest values
+			for(int i = 0; i < scores.size(); i++){ //iterate through the array list
+				if(scores.get(i) < lowestVal){
+					lowestVal = scores.get(i); //if its the lowest value, put it in the lowest value variable
+				}
 			}
-		}
-		for(int i = 0; i < scores.size(); i++){
-			if((scores.get(i) < secondLowestVal) && (scores.get(i) > lowestVal)){ // if its the second lowest, assign it to the second lowest variable
-				secondLowestVal = scores.get(i);
+			for(int i = 0; i < scores.size(); i++){
+				if((scores.get(i) < secondLowestVal) && (scores.get(i) >= lowestVal)){ // if its the second lowest, assign it to the second lowest variable
+					secondLowestVal = scores.get(i);
+				}
 			}
+			System.out.println(lowestVal + "   " + secondLowestVal);
+			for(int i = 0; i < scores.size(); i++){
+				sum += scores.get(i); //sum up the array list
+			}
+			sum = sum - lowestVal - secondLowestVal;
+			average = sum / (scores.size() - 2); //create average
 		}
-		for(int i = 0; i < scores.size(); i++){
-			sum += scores.get(i); //sum up the array list
-		}
-		sum = sum - lowestVal - secondLowestVal;
-		double average = sum / (scores.size() - 2); //create average
 		return average; //return the average
 		
 	}
