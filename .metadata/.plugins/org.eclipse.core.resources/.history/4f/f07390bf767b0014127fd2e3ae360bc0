@@ -1,0 +1,25 @@
+/**
+ * 
+ * @author Derek Wider
+ *Lab 8.3
+ */
+public class StudentsRunner {
+
+	public static void main(String[] args) {
+		StudentScores myClass = new StudentScores();
+		myClass.addStudent(new Student("aerp", 50));
+		myClass.addStudent(new Student("berp", 90));
+		myClass.addStudent(new Student("cerp", 80));
+		myClass.addStudent(new Student("derp", 70));
+		myClass.addStudent(new Student("eerp", 60));
+		myClass.addStudent(new Student("ferp", 80));
+		myClass.addStudent(new Student("gerp", 50));
+		myClass.addStudent(new Student("herp", 20));
+		myClass.addStudent(new Student("ierp", 10));
+		myClass.addStudent(new Student("jerp", 100));
+		myClass.addStudent(new Student("kerp", 5));
+		
+		System.out.println(myClass.getHighest().getScore());
+	}
+
+}
