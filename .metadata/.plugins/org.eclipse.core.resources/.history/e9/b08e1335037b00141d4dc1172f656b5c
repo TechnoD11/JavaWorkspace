@@ -12,7 +12,7 @@ public class ScoreSetRunner {
 		scores.add(68);
 		scores.add(68);
 		scores.add(78);
-		scores.add(58);
+		scores.add(68);
 		scores.add(90);
 		scores.add(90);
 		System.out.println(scores.averageWithoutLowest2());

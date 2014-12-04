@@ -26,7 +26,7 @@ public class DoorRunner {
 			}
 		}
 		int counter = 0;
-		for(int i = 1; i < myDoors.size(); i++){
+		for(int i = 0; i < myDoors.size(); i++){
 			System.out.print(myDoors.get(i) + " ");
 			counter++;
 			if(counter == 1){

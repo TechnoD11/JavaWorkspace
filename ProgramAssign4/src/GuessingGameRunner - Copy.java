@@ -91,8 +91,6 @@ public class GuessingGameRunner {
 			userInputString = in.next(); //prompt for another game
 			if(userInputString.equalsIgnoreCase("y")){
 				isCorrect = false;
-				ceil = 100;
-				floor = 0;
 				isFinished = false; //if yes, isFinished is still false
 				numberOfGuesses = 0;
 			}
