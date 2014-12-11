@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class DoorRunner {
 
 	public static void main(String[] args) {
-		ArrayList<Door> myDoors = new ArrayList<Door>();
+		ArrayList<Door> myDoors = new ArrayList<Door>(); //new Doors arraylist
 		myDoors.add(0, null); //create new arraylist and make first element null
 		for(int i = 1; i <= 100; i++){
 			Door thisDoor = new Door("closed", i);

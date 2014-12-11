@@ -1,0 +1,27 @@
+import java.util.Random;
+
+/**
+ * 
+ * @author Derek Wider
+ *Programming Assignment 5
+ */
+public class IntegerArray {
+
+	public static void main(String[] args) {
+		Random rand = new Random();
+		int[] myInts = new int[100];
+		for(int i = 0; i <= myInts.length; i++){
+			myInts[i] = rand.nextInt(1000) + 1;
+		}
+		int rowSize = 0;
+		for(int i = 0; i <= myInts.length; i++){
+			System.out.print(i + ": " + myInts[i] + "\t");
+			if(rowSize == 6){
+				System.out.println();
+				rowSize = 0;
+			}
+			rowSize++;
+		}
+	}
+
+}

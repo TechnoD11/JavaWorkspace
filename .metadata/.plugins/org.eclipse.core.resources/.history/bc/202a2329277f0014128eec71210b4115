@@ -1,0 +1,13 @@
+/**
+ * 
+ * @author Derek Wider and Nick Napior
+ *
+ */
+public class MagicSquareRunner {
+
+	public static void main(String[] args) {
+	int[][] myints = new int[3][4];
+	System.out.println(myints[0].length);
+	}
+
+}
