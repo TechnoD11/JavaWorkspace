@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class EliminationRunner {
+
+	public static void main(String[] args) {
+		String resp = "";
+		Scanner in = new Scanner(System.in);
+		boolean playGame = true;
+		Elimination myGame = new Elimination();
+		while(playGame){
+			System.out.println("Welcome to Elimination! Below is the simulated game board. "
+					+ "Dice A and B are your dice rolls"
+					+ "Press (D) - Dual, to use both of these on the board"
+					+ "Press (S) - Sum, to add up the sum for the board"
+					+ "Press (Q) - Quit, to quit from the game");
+			
+			
+		}
+		
+		
+		
+		
+		System.out.println(myGame.toString());
+	}
+
+}

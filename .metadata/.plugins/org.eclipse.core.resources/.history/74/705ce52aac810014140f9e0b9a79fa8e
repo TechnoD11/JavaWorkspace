@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class EliminationRunner {
+
+	public static void main(String[] args) {
+		String resp = "";
+		Scanner in = new Scanner(System.in);
+		boolean playGame = true;
+		boolean inGame = true;
+		Elimination myGame = new Elimination();
+		while(playGame){
+			System.out.println("Welcome to Elimination! Below is the simulated game board. "
+					+ "\nDice A and B are your dice rolls"
+					+ "\nPress (D) - Dual, to use both of these on the board"
+					+ "\nPress (S) - Sum, to add up the sum for the board"
+					+ "\nPress (Q) - Quit, to quit from the game\n");
+			while(inGame){
+				System.out.println(myGame.getNewDiceRolls());
+				System.out.println(myGame.toString());
+				System.out.println("What is your choice? (D)ual, (S)um, or (Q)uit?");
+				resp = in.next();
+				int changeOutcome = myGame.changeArray(resp);
+				if(changeOutcome == 0){
+					inGame = true;
+				}	
+				else if(changeOutcome == 1){
+					inGame = false;
+					System.out.println("You have lost the game (Illegal Move!). Your final score is: " + myGame.getFinalScore());
+				}
+				else if(changeOutcome == 2){
+					System.out.println("You have lost the game (User Quit Out). Your final score is: " + myGame.getFinalScore());
+				}
+				else{
+					System.out.println("You have lost the game (Illegal Game Input!). Your final score is: " + myGame.getFinalScore());
+				}
+			}
+			System.out.println("Would you like to play again? (y)es or (n)o");
+			if(in.next().equalsIgnoreCase("y")){
+				playGame = true;
+				inGame = true;
+				myGame.clearBoard();
+			}
+			else{
+				playGame = false;
+			}
+		}
+		
+		
+		
+		
+		System.out.println(myGame.toString());
+	}
+
+}

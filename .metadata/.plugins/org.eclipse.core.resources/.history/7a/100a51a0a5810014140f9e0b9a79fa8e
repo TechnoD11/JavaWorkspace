@@ -1,0 +1,19 @@
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class Elimination {
+	private boolean[] tabs;
+	public Elimination(){
+		tabs = new boolean[12];
+	}
+	public void changeArray(String input){
+		
+	}
+	public String toString(){
+		String arrayString = "";
+		
+		return arrayString;
+	}
+}

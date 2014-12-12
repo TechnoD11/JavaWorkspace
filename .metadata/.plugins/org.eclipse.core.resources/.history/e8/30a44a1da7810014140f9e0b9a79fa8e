@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class EliminationRunner {
+
+	public static void main(String[] args) {
+		String resp = "";
+		Scanner in = new Scanner(System.in);
+		boolean playGame = true;
+		Elimination myGame = new Elimination();
+		/*while(playGame){
+			System.out.println("Welcome to Elimination! ");
+			
+		}*/
+		//System.out.println(myGame.toString());
+	}
+
+}

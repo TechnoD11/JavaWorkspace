@@ -1,0 +1,73 @@
+import java.util.Random;
+
+/**
+ * 
+ * @author Derek Wider
+ *
+ */
+public class Elimination {
+	private boolean[] tabs;
+	private Random Rand;
+	private int diceA;
+	private int diceB;
+	private int finalScore;
+	public Elimination(){
+		tabs = new boolean[12];
+		Rand = new Random();
+		diceA = 0;
+		diceB = 0;
+		finalScore = 0;
+	}
+	public void clearBoard(){
+		for(int i = 0; i < tabs.length; i++){
+			tabs[i] = false;
+		}
+	}
+	public boolean changeArray(String input){
+		boolean isEmpty = false;
+		if(input.equalsIgnoreCase("d")){
+			if(tabs[diceA] || tabs[diceB]){
+				isEmpty = true;
+			}
+			else{
+				tabs[diceA] = true;
+				tabs[diceB] = true;
+			}
+		}
+		else if(input.equalsIgnoreCase("s")){
+			if(tabs[diceA + diceB]){
+				isEmpty = true;
+			}
+			else{
+				tabs[diceA + diceB] = true;
+			}
+		}
+		else if(input.equalsIgnoreCase("q")){
+			for(int i = 0; i < tabs.length; i++){
+				if(!tabs[i]){
+					finalScore += i;
+				}
+			}
+		}
+		else{
+			System.out.println("Please input a valid response");
+		}
+		return isEmpty;
+	}
+	public String toString(){
+		String arrayString = "";
+		for(int i = 0; i < tabs.length; i++){
+			if(tabs[i]){
+				arrayString += " X";
+			}
+			else{
+				arrayString += " -";
+			}
+		}
+		arrayString += "\n";
+		for(int i = 0; i < tabs.length; i++){
+			arrayString += " " + (i + 1);
+		}
+		return arrayString;
+	}
+}
