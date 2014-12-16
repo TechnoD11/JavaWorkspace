@@ -39,22 +39,32 @@ public class IntegerArray {
 			}
 		}
 		System.out.println("\nThe Average of the array is: " + average + " and there are " + withinAverage + " members of the array that are within 50 of the average");
-		System.out.println("Please input an integer to see if it is within the array");
-		int value = in.nextInt();
-		boolean containsVal = false; //check to see if the array contains the input int
-		int index = 0;
-		for(int i = 0; i < myInts.length; i++){
-			if(myInts[i] == value){
-				index = i;
-				containsVal = true;
+		boolean play = true;
+		while(play){
+			System.out.println("Please input an integer to see if it is within the array");
+			int value = in.nextInt();
+			boolean containsVal = false; //check to see if the array contains the input int
+			int index = 0;
+			for(int i = 0; i < myInts.length; i++){
+				if(myInts[i] == value){
+					index = i;
+					containsVal = true;
+				}
 			}
-		}
-		if(containsVal == true){ //if it does, print index
-			System.out.println("The value you inputted (" + value + ") is in the array at index " + (index + 1));	
-		}
-		else{ //if not, quit out
-			System.out.println("The value you inputted (" + value + ") is not in the array. Sorry");
+			if(containsVal == true){ //if it does, print index
+				System.out.println("The value you inputted (" + value + ") is in the array at index " + (index + 1));	
+			}
+			else{ //if not, quit out
+				System.out.println("The value you inputted (" + value + ") is not in the array.");
+			}
+			System.out.println("Would you like to search for another? (y)es or (n)o");
+			if(in.next().equalsIgnoreCase("y")){
+				play = true;
+			}
+			else{
+				play = false;
+			}
+		
 		}
 	}
-
 }

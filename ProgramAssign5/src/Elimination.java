@@ -3,7 +3,7 @@ import java.util.Random;
 /**
  * 
  * @author Derek Wider
- *
+ *Programming Assignment 5
  */
 public class Elimination {
 	private boolean[] tabs;

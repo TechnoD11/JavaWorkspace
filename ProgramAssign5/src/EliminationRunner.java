@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * 
  * @author Derek Wider
- *
+ *Programming Assignment 5
  */
 public class EliminationRunner {
 
