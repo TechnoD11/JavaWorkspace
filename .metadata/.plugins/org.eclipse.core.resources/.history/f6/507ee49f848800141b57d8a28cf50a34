@@ -1,0 +1,79 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+public class Life {
+	private int rows;
+	private int columns;
+	private boolean theGrid[][];
+	public Life(int rows, int columns){
+		theGrid = new boolean[rows][columns];
+		this.rows = rows;
+		this.columns = columns;
+		clearGrid();
+	}
+	public void clearGrid(){
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j < columns; j++){
+				theGrid[i][j] = false;
+			}
+		}
+	}
+	public void randomBuild(){
+		clearGrid();
+	}
+	public void fileInput(String directory, String fileName) throws FileNotFoundException{
+		clearGrid();
+		File inFile = new File(directory, fileName); //scan in a paint data file
+		Scanner inData = new Scanner(inFile);
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j < columns; j++){
+				if(inData.next().equalsIgnoreCase(" ")){
+					theGrid[i][j] = false;
+				}
+				else{
+					theGrid[i][j] = true;
+				}
+			}
+		}
+	}
+	public void initialGrid(){
+		int r = rows/3;					// Set up a third of the way down
+		int c = columns/3;					// Set up a third of the way over
+		clearGrid();
+		theGrid[r][c + 3] = theGrid[r][c + 8] = true;		//top row
+		theGrid[r + 1][c + 1] = theGrid[r + 1][c + 2] = true;	//middle 2 le.t
+		theGrid[r + 1][c + 9] = theGrid[r + 1][c + 10] = true;	//middle 4
+		theGrid[r + 1][c + 4] = theGrid[r + 1][c + 5] = true;	//middle 4
+		theGrid[r + 1][c + 6] = theGrid[r + 1][c + 7] = true;	//middle 2 right
+		theGrid[r + 2][c + 3] = theGrid[r + 2][c + 8] = true;	//bottom row
+	}
+	public void next(){
+		boolean[][] newBoard = new boolean[rows][columns];
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j < columns; j++){
+				newBoard[i][j] = false;
+			}
+		}
+		for(int i = (rows - 1); i >= 0 ; i--){
+			for(int j = (columns - 1); j >= 0; j--){
+			}
+		}
+	}
+	public String toString(){
+		String board = "";
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j < columns; j++){
+				if(theGrid[i][j]){
+					board += "*";
+				}
+				else{
+					board += " ";
+				}
+			}
+			board += "\n";
+		}
+		return board;
+	}
+}
