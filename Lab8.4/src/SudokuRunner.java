@@ -14,14 +14,14 @@ public class SudokuRunner
        String config3 = "258137649146985327793246851472863195581492736639571482315728964824619573967354218";
        Sudoku puzzle3 = new Sudoku(config3);
  
-       System.out.println(puzzle1);
-       System.out.println(puzzle1.isValidSudoku());
+       System.out.println(puzzle1); //prints each sudoku and the result
+       System.out.println("Is it a valid sudoku? Answer is: " + puzzle1.isValidSudoku());
        System.out.println("--------------------------------------------------");
        System.out.println(puzzle2);
-       System.out.println(puzzle2.isValidSudoku());
+       System.out.println("Is it a valid sudoku? Answer is: " + puzzle2.isValidSudoku());
        System.out.println("--------------------------------------------------");       
        System.out.println(puzzle3);
-       System.out.println(puzzle3.isValidSudoku());
+       System.out.println("Is it a valid sudoku? Answer is: " + puzzle3.isValidSudoku());
     }
 }
  
