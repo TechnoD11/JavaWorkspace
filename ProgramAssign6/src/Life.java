@@ -1,17 +1,24 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.NoSuchElementException;
+import java.util.Random;
 import java.util.Scanner;
 
 
 public class Life {
+	private int theRows;
+	private int theColumns;
 	private int rows;
 	private int columns;
 	private boolean theGrid[][];
+	private Random rand;
 	public Life(int rows, int columns){
 		theGrid = new boolean[rows][columns];
 		this.rows = rows;
+		theRows = rows;
+		theColumns = columns;
 		this.columns = columns;
+		rand = new Random();
 		clearGrid();
 	}
 	public void clearGrid(){
@@ -23,6 +30,16 @@ public class Life {
 	}
 	public void randomBuild(){
 		clearGrid();
+		for(int i = 0; i < theGrid.length; i++){
+			for(int j = 0; j < theGrid[0].length; j++)
+				if(rand.nextInt(10) < 3){
+					theGrid[i][j] = true;
+				}
+		}
+	}
+	private void resetBounds(){
+		rows = theRows;
+		columns = theColumns;
 	}
 	public void fileInput(String directory, String fileName) throws FileNotFoundException{
 		clearGrid();
@@ -39,17 +56,21 @@ public class Life {
 				else{
 					theGrid[i][j] = true;					
 				}
+				columnCounter++;
 			}
 			try{
 				lineData = inData.next();
 			}catch (NoSuchElementException e){
 				contains = false;
+				columns = columnCounter;
+				rows = i + 1;
 			}
-			System.out.println(lineData);
-			rows = i;
-			//columnCounter++;
-			columns = columnCounter;
+			columnCounter = 0;
+	//		System.out.println(lineData);
 		}
+		inData.close();
+	//	System.out.println("Rows: " + rows);
+	//	System.out.println("Columns: " + columns);
 	}
 	public void initialGrid(){
 		int r = rows/3;					// Set up a third of the way down
@@ -69,8 +90,39 @@ public class Life {
 				newBoard[i][j] = false;
 			}
 		}
+		int boundCounter = 0;
+		int cellCounter = 0;
 		for(int i = (rows - 1); i >= 0 ; i--){
 			for(int j = (columns - 1); j >= 0; j--){
+				if(((i - (rows - 1)) == 0 || (i - rows) == (-rows)) || ((j - (columns - 1)) == 0 || (j - columns) == (-columns))){
+					//for()
+				}
+				else{
+					for(int k = (i-1); k < (i+2); k++){
+						for(int m = (j-1); m < (j+2); m++){
+							if(!(k == i && m == j)){
+								if(theGrid[k][m]){
+									cellCounter++;	
+								}
+							}
+						}
+					}
+					if(cellCounter == 3 || cellCounter == 2 && theGrid[i][j]){
+						newBoard[i][j] = true;
+					}
+					cellCounter = 0;
+				}
+			}
+		}
+		//transpose onto new grid
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j < columns; j++){
+				if(newBoard[i][j]){
+					theGrid[i][j] = true;
+				}
+				else{
+					theGrid[i][j] = false;
+				}
 			}
 		}
 	}

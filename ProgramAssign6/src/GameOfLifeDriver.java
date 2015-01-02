@@ -16,11 +16,17 @@ public class GameOfLifeDriver {
 		
 		Life aGame = new Life(30,30);
 		//aGame.initialGrid();
-		try {
+		/*try {
 			aGame.fileInput("C:\\Users\\Derek\\workspace\\JavaWorkspace\\ProgramAssign6\\src", "FileOne.txt");
 		} catch (FileNotFoundException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
+		}*/
+		aGame.initialGrid();
+		for(int i = 0; i < 15; i++){
+			System.out.println(i + ":");
+			System.out.println(aGame.toString());
+			aGame.next();
 		}
 		//System.out.println(aGame.toString());
 	//	String directory = "C:\Users\Derek\workspace\JavaWorkspace\ProgramAssign6\src\";
