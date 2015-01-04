@@ -90,28 +90,24 @@ public class Life {
 				newBoard[i][j] = false;
 			}
 		}
-		int boundCounter = 0;
 		int cellCounter = 0;
-		for(int i = (rows - 1); i >= 0 ; i--){
-			for(int j = (columns - 1); j >= 0; j--){
-				if(((i - (rows - 1)) == 0 || (i - rows) == (-rows)) || ((j - (columns - 1)) == 0 || (j - columns) == (-columns))){
-					//for()
-				}
-				else{
-					for(int k = (i-1); k < (i+2); k++){
-						for(int m = (j-1); m < (j+2); m++){
-							if(!(k == i && m == j)){
-								if(theGrid[k][m]){
-									cellCounter++;	
+		for (int i = (rows - 1); i >= 0; i--) {
+			for (int j = (columns - 1); j >= 0; j--) {
+				for (int k = (i - 1); k < (i + 2); k++) {
+					for (int m = (j - 1); m < (j + 2); m++) {
+						if (!(k == i && m == j)) {
+							if (!((k < 0 || k > (rows - 1)) || (m < 0 || m > (columns - 1)))) {
+								if (theGrid[k][m]) {
+									cellCounter++;
 								}
 							}
 						}
 					}
-					if(cellCounter == 3 || cellCounter == 2 && theGrid[i][j]){
-						newBoard[i][j] = true;
-					}
-					cellCounter = 0;
 				}
+				if (cellCounter == 3 || cellCounter == 2 && theGrid[i][j]) {
+					newBoard[i][j] = true;
+				}
+				cellCounter = 0;
 			}
 		}
 		//transpose onto new grid
