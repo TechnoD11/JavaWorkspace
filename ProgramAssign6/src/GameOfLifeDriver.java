@@ -8,23 +8,40 @@ public class GameOfLifeDriver {
 		// initialize variables
 		
 		System.out.println("Welcome to the Game of Life.");
-		System.out.println("Your choices for building the initial grid is as follows:");
-		System.out.println("\t(R)andom Grid\n\t(F)ile Input\n\t(P)rebuilt Grid");
-		System.out.println("\nPlease input your choice:");
-		
+		Scanner in = new Scanner(System.in);
+		boolean isFinished = false;
+		while(!isFinished){
+			System.out.println("Your choices for building the initial grid is as follows:");
+			System.out.println("\t(R)andom Grid\n\t(F)ile Input\n\t(P)rebuilt Grid");
+			System.out.println("\nPlease input your choice:");
+			String input = in.next();
+			if(input.equalsIgnoreCase("R")){
+				
+			}
+			else if(input.equalsIgnoreCase("F")){
+				
+			}
+			else if(input.equalsIgnoreCase("P")){
+				
+			}
+			else{
+				System.out.println("Please input a valid response");
+			}	
+		}
 		// gather input and assign to variables
 		
 		Life aGame = new Life(30,30);
 		//aGame.initialGrid();
-		try {
+		/*try {
 			aGame.fileInput("C:\\Users\\Derek\\workspace\\JavaWorkspace\\ProgramAssign6\\src", "FileOne.txt");
 		} catch (FileNotFoundException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
-		
-		//aGame.initialGrid();
-		for(int i = 0; i < 15; i++){
+		*/
+		aGame.randomBuild();
+	//	aGame.initialGrid();
+		for(int i = 0; i <= 15; i++){
 			System.out.println(i + ":");
 			System.out.println(aGame.toString());
 			aGame.next();

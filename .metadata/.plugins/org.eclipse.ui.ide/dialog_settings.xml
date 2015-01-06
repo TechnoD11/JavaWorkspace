@@ -5,11 +5,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Derek\workspace\JavaWorkspace\GridWorldProj2015"/>
 			<item value="C:\Users\Derek\workspace\JavaWorkspace\ProgramAssign6"/>
 			<item value="C:\Users\Derek\workspace\JavaWorkspace\TicTacToeSwag"/>
 			<item value="C:\Users\Derek\workspace\PhysicsSimulator"/>
 			<item value="C:\Users\Derek\workspace\Reference\GamePrimeSwag"/>
-			<item value="C:\Users\Derek\workspace\JavaWorkspace"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
@@ -22,6 +22,8 @@
 	<section name="ResourceNavigator">
 		<item value="Aggregate for window 1415109556815" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
 		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+	<section name="NewWizardAction">
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">
 		<item value="381" key="DIALOG_X_ORIGIN"/>
