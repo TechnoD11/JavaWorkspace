@@ -12,6 +12,8 @@ public class Life {
 	private int columns;
 	private boolean theGrid[][];
 	private Random rand;
+	private Scanner inData;
+	private File inFile;
 	public Life(int rows, int columns){
 		theGrid = new boolean[rows][columns];
 		this.rows = rows;
@@ -43,8 +45,8 @@ public class Life {
 	}
 	public void fileInput(String directory, String fileName) throws FileNotFoundException{
 		clearGrid();
-		File inFile = new File(directory, fileName); //scan in a paint data file
-		Scanner inData = new Scanner(inFile);
+		inFile = new File(directory, fileName); //scan in a paint data file
+		inData = new Scanner(inFile);
 		String lineData = inData.next();
 		int columnCounter = 0;
 		boolean contains = true;
@@ -66,11 +68,8 @@ public class Life {
 				rows = i + 1;
 			}
 			columnCounter = 0;
-	//		System.out.println(lineData);
 		}
 		inData.close();
-	//	System.out.println("Rows: " + rows);
-	//	System.out.println("Columns: " + columns);
 	}
 	public void initialGrid(){
 		int r = rows/3;					// Set up a third of the way down

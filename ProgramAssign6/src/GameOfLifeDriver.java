@@ -5,32 +5,68 @@ public class GameOfLifeDriver {
 
 	public static void main(String[] args) 
 	{		
-		// initialize variables
-		
+		/** @TODO
+		 * handle all input errors
+		 * confirm all 3 generations work
+		 */
 		System.out.println("Welcome to the Game of Life.");
 		Scanner in = new Scanner(System.in);
 		boolean isFinished = false;
+		boolean startGame = true;
+		int rows = 0;
+		int columns = 0;
+		int generations = 0;
+		String input = "";
+		String directory = "";
+		String fileName = "";
 		while(!isFinished){
-			System.out.println("Your choices for building the initial grid is as follows:");
+			startGame = true;
+			System.out.println("Please input the number of rows for the board:");
+			rows = in.nextInt();
+			System.out.println("Please input the number of columns for the board:");
+			columns = in.nextInt();
+			System.out.println("Please input the number of generations to build");
+			generations = in.nextInt();
+			Life aGame = new Life(rows, columns);
+			System.out.println("Your choices for building the initial grid are as follows:");
 			System.out.println("\t(R)andom Grid\n\t(F)ile Input\n\t(P)rebuilt Grid");
 			System.out.println("\nPlease input your choice:");
-			String input = in.next();
+			input = in.next();
 			if(input.equalsIgnoreCase("R")){
-				
+				aGame.randomBuild();
 			}
 			else if(input.equalsIgnoreCase("F")){
-				
+				try {
+					aGame.fileInput(directory, fileName);
+				} catch (FileNotFoundException e) {
+					System.out.println("Please input a correct directory or file name");
+					e.printStackTrace();
+				}
 			}
 			else if(input.equalsIgnoreCase("P")){
-				
+				aGame.initialGrid();
 			}
 			else{
 				System.out.println("Please input a valid response");
+				startGame = false;
 			}	
+			for(int i = 0; i <= generations && startGame; i++){
+				System.out.println(i + ":");
+				System.out.println(aGame.toString());
+				aGame.next();
+			}
+			System.out.println("Would you like to play again? (Y)es or (N)o");
+			input = in.next();
+			if(input.equalsIgnoreCase("y")){
+				isFinished = false;
+			}
+			else{
+				isFinished = true;
+			}
 		}
 		// gather input and assign to variables
 		
-		Life aGame = new Life(30,30);
+		//Life aGame = new Life(30,30);
 		//aGame.initialGrid();
 		/*try {
 			aGame.fileInput("C:\\Users\\Derek\\workspace\\JavaWorkspace\\ProgramAssign6\\src", "FileOne.txt");
@@ -39,13 +75,13 @@ public class GameOfLifeDriver {
 			e.printStackTrace();
 		}
 		*/
-		aGame.randomBuild();
+		//aGame.randomBuild();
 	//	aGame.initialGrid();
-		for(int i = 0; i <= 15; i++){
+	/*	for(int i = 0; i <= 15; i++){
 			System.out.println(i + ":");
 			System.out.println(aGame.toString());
 			aGame.next();
-		}
+		}*/
 		
 		//aGame.next();
 		//System.out.println(aGame.toString());
