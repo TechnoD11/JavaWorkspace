@@ -78,6 +78,9 @@ public class Life {
 		theGrid[r + 1][c + 6] = theGrid[r + 1][c + 7] = true;	//middle 2 right
 		theGrid[r + 2][c + 3] = theGrid[r + 2][c + 8] = true;	//bottom row
 	}
+	public void userInput(int row, int column){
+		theGrid[row][column] = true;
+	}
 	public void next(){ //creates the next generation based on the game of life rules
 		boolean[][] newBoard = new boolean[rows][columns]; //create a temporary board, same size as real game board
 		for(int i = 0; i < rows; i++){

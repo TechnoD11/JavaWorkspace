@@ -28,7 +28,7 @@ public class GameOfLifeDriver {
 		while(!isFinished){ 
 			startGame = true;
 			System.out.println("Your choices for building the initial grid are as follows:");
-			System.out.println("\t(R)andom Grid\n\t(F)ile Input\n\t(P)rebuilt Grid");
+			System.out.println("\t(R)andom Grid\n\t(F)ile Input\n\t(P)rebuilt Grid\n\t(U)ser Input");
 			System.out.println("\nPlease input your choice:");
 			input = in.next(); //prompt for user choice
 			if(input.equalsIgnoreCase("R")){ //if random build, ask for rows, columns, and then create the grid with the inputed data
@@ -50,6 +50,35 @@ public class GameOfLifeDriver {
 			else if(input.equalsIgnoreCase("P")){ //if prebuilt, use the default grid 
 				aGame.createGrid(defaultRows, defaultColumns);
 				aGame.initialGrid(); 
+			}
+			else if(input.equalsIgnoreCase("U")){ //lets users input a row and column to create a live cell
+				System.out.println("Please input the number of rows for the board:");
+				rows = in.nextInt();
+				System.out.println("Please input the number of columns for the board:");
+				columns = in.nextInt();//creates the grid at the rows and columns
+				aGame.createGrid(rows, columns);
+				boolean finished = false;
+				while(!finished){ //while the user wants to put more cells in
+					System.out.println("Please input the row to create a live cell in:");
+					int row = in.nextInt();
+					System.out.println("Please input the column to create a live cell in:");
+					int column = in.nextInt(); //prompt for rows and columns
+					if((row >= rows || column >= columns) || (row < 0 || column < 0)){
+						System.out.println("Please input a row/column within the grid bounds");
+					} //check to make sure user input is within the grid
+					else{
+						aGame.userInput(row, column);
+					} //add to grid if not
+					System.out.println(aGame.toString());
+					System.out.println("(A)dd another cell or (q)uit out?");
+					String resp = in.next(); //prompt for more cells
+					if(resp.equalsIgnoreCase("a")){
+						finished = false;
+					}
+					else{
+						finished = true; //quit out if finished
+					}
+				}
 			}
 			else{
 				System.out.println("Please input a valid response");
