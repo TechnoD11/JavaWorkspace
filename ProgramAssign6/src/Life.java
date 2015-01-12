@@ -31,6 +31,86 @@ public class Life {
 			}
 		}
 	}
+	/*public boolean isOutOfBounds(int row, int column){
+		boolean resp = false;
+		try{
+			if(lifeArray[row][column]){
+				
+			}
+		}
+		return resp;
+	}
+	*/
+	/*public boolean subCheck(int row, int column){
+		boolean resp = false;
+		int counter = 0;
+		for(int i = (row - 1); i <= (row + 1); i++){
+			for(int j = (column - 1); j <= (column + 1); j++){
+				try{
+					if(lifeArray[i][j] && ((i != row) && (j != column))){
+						counter++; //not sure if counter is still incremented when an exception is caught, you need to check
+					}
+				}
+				catch (IndexOutOfBoundsException e){
+					
+				}
+			}
+		}
+		if(counter == 3 || (counter == 2 && lifeArray[row][column])){
+			resp = true;
+		}
+		return resp;
+	}*/
+	/*public void nextGen() {
+		boolean[][] newBoard = new boolean[rows][columns]; //create a temporary board, same size as real game board
+		for(int i = 0; i < lifeArray.length; i++){
+			for(int j = 0; j < lifeArray[0].length; j++){
+				newBoard[i][j] = false; //set all to false
+			}
+		}
+		for (int i = 0; i < lifeArray.length; i++) {
+			for (int j = 0; j < lifeArray[0].length; j++) {
+				if(subCheck(i, j)){
+					newBoard[i][j] = true;
+				}
+			}
+		}
+		for(int i = 0; i < lifeArray.length; i++){
+			for(int j = 0; j < lifeArray[0].length; j++){
+				if(newBoard[i][j]){ //read temp board, set temp board data on real game board
+					lifeArray[i][j] = true;
+				}
+				else{
+					lifeArray[i][j] = false;
+				}
+			}
+		}
+	}
+	
+				
+			/*	if (lifeArray[i + 1][j] == true) {
+					counter++;
+				} else if (i < lifeArray.length + 1 && lifeArray[i - 1][j] == true) {
+					counter++;
+				} else if (lifeArray[i][j + 1] == true) {
+					counter++;
+				} else if (lifeArray[i][j - 1] == true) {
+					counter++;
+				} else if (lifeArray[i + 1][j + 1] == true) {
+					counter++;
+				} else if (lifeArray[i - 1][j - 1] == true) {
+					counter++;
+				}
+				if (counter >= 4 || counter <= 1) {
+					lifeArray[i][j] = false;
+				} else if (counter == 3) {
+					lifeArray[i][j] = true;
+				}
+				counter = 0;
+			}
+		}
+	}*/
+
 	public void randomBuild(){ //builds a random game of life grid using the random class
 		clearGrid();//clear grid
 		for(int i = 0; i < rows; i++){
