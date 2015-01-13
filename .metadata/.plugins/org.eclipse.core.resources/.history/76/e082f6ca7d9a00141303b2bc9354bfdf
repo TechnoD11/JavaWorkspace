@@ -3,8 +3,8 @@ package DancingBug;
 import info.gridworld.actor.Bug;
 
 public class DancingBug extends Bug {
-	private int[] turns; //holds the turns to perform before moving
-	private int steps; //how many steps to move before completion
+	private int[] turns;
+	private int steps;
 
 	public DancingBug(int[] turns) {
 		this.turns = turns;
@@ -19,9 +19,9 @@ public class DancingBug extends Bug {
 
 	public void act() {
 		if (steps == turns.length)
-			steps = 0; //reset if reaches length
+			steps = 0;
 		turn(turns[steps]);
-		steps++; //turn for turns[steps] number of times
+		steps++;
 		super.act();
 	}
 }

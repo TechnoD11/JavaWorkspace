@@ -27,9 +27,9 @@ import info.gridworld.grid.Location;
  */
 public class ZBug extends Bug
 {
-    private int steps; //holds current steps
-    private int segLength; //holds the z length
-    private int seg; //holds which portion of the z the bug is on
+    private int steps;
+    private int segmentLength;
+    private int segment;
 
     /**
      * Constructs a box bug that traces a square of a given side length
@@ -39,27 +39,27 @@ public class ZBug extends Bug
     {
     	setDirection(Location.EAST);
     	steps = 0;
-    	seg = 1;
-    	segLength = length;
+    	segment = 1;
+    	segmentLength = length;
     } 
 
     /**
      * Moves to the next location of the square.
      */
     public void act(){
-		if (seg <= 3 && steps < segLength) { //if in 3rd segment and steps are within sidelength
+		if (segment <= 3 && steps < segmentLength) {
 			if (canMove()) {
 				move();
 				steps++;
 			}
-		} else if (seg == 1) { //if in second segment, go to the southwest (forms diagonal)
+		} else if (segment == 1) {
 			setDirection(Location.SOUTHWEST);
 			steps = 0;
-			seg++;
-		} else if (seg == 2) { //if in first segment, go to the east 
+			segment++;
+		} else if (segment == 2) {
 			setDirection(Location.EAST);
 			steps = 0;
-			seg++;
+			segment++;
 		}
 	}
 

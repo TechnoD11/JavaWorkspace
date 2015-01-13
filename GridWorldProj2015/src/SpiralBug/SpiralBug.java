@@ -26,8 +26,8 @@ import info.gridworld.actor.Bug;
  */
 public class SpiralBug extends Bug
 {
-    private int steps;
-    private int sideLength;
+    private int steps; //holds the current step prorgress
+    private int length; //holds the spiral length
 
     /**
      * Constructs a box bug that traces a square of a given side length
@@ -36,7 +36,7 @@ public class SpiralBug extends Bug
     public SpiralBug(int length)
     {
         steps = 0;
-        sideLength = length;
+        this.length = length;
     }
 
     /**
@@ -44,17 +44,17 @@ public class SpiralBug extends Bug
      */
     public void act()
     {
-        if (steps < sideLength && canMove())
+        if (steps < length && canMove()) //if not at end of spiral length and can move
         {
             move();
-            steps++;
+            steps++; //move and increase steps
         }
         else
         {
             turn();
-            turn();
+            turn(); //turn 90 degrees and reset steps, increase length to make spiral
             steps = 0;
-            sideLength++;
+            length++;
         }
     }
 }

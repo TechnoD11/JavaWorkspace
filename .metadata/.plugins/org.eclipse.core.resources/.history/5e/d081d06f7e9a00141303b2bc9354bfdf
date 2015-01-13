@@ -35,8 +35,8 @@ public class ZBugRunner
         ZBug moulder = new ZBug(6);
         moulder.setColor(Color.ORANGE);
         ZBug scully = new ZBug(3);
-        world.add(new Location(7, 8), moulder); //create two new bugs and place on grid
-        world.add(new Location(5, 5), scully); //Bugs names are Moulder and Scully - from X-Files!
+        world.add(new Location(7, 8), moulder);
+        world.add(new Location(5, 5), scully);
         world.show();
     }
 }
