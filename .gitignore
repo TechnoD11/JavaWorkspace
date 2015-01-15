@@ -16,6 +16,9 @@ $RECYCLE.BIN/
 
 #Java Specific Ignores
 *.class
+
+#Ignore metadata
+.metadata/
  
 #netbeans ignore personal stuff
 nbproject/private/
@@ -40,7 +43,8 @@ nbproject/private/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
