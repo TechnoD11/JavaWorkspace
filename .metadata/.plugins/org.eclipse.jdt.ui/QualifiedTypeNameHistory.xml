@@ -7,4 +7,5 @@
 <fullyQualifiedTypeName name="info.gridworld.grid.Location"/>
 <fullyQualifiedTypeName name="java.io.Writer"/>
 <fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="info.gridworld.actor.Actor"/>
 </qualifiedTypeNameHistroy>
