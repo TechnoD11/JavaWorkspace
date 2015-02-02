@@ -1,10 +1,24 @@
+/**
+ * @author Derek Wider
+ * APCS Programming Assignment 7
+ */
 package saveMyHeart;
 
-import info.gridworld.actor.Actor;
+import java.awt.Color;
 
-public class Heart extends Actor{
-	public Heart(){
-		
-	}
-	public void act(){}
-}	
+import info.gridworld.actor.Actor;
+import info.gridworld.grid.Location;
+
+public class Heart extends Actor
+{
+	Location thisLocation = this.getLocation();
+	
+    public Heart()//construct a heart, set it to red
+    {
+        setColor(Color.RED);
+    }
+    public void act() 
+    {
+     //do nothing
+    }
+}
