@@ -28,7 +28,7 @@ public class Bacteria extends Actor {
 			}
 		}
 	}
-	private Location getHeartLocation(){ //returns the location of the heart
+	protected Location getHeartLocation(){ //returns the location of the heart
 		ArrayList<Location> occupiedSpots = getGrid().getOccupiedLocations(); //array of occupied grid locations
 		for(Location myLoc : occupiedSpots){
 			if(getGrid().get(myLoc) instanceof Heart){ //if one of the locations is an instance of the heart class, return true
@@ -37,7 +37,7 @@ public class Bacteria extends Actor {
 		}
 		return null; //if none found, return null
 	}
-	private boolean isInTerminationLocation(Location loc){ //returns true if bacteria is adjacent to heart
+	protected boolean isInTerminationLocation(Location loc){ //returns true if bacteria is adjacent to heart
 		ArrayList<Location> adjacentToHeart = getGrid().getValidAdjacentLocations(getHeartLocation()); //get adjacent heart locations
 		for(Location thisLoc : adjacentToHeart){
 			if(loc.equals(thisLoc)){ //check each adjacent to the input loc, if equal, return true

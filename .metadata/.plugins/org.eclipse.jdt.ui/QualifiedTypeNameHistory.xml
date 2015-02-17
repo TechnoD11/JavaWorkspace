@@ -5,16 +5,17 @@
 <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
 <fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
 <fullyQualifiedTypeName name="java.io.Writer"/>
-<fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="java.awt.Graphics"/>
 <fullyQualifiedTypeName name="java.awt.Graphics2D"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="saveMyHeart.Bacteria"/>
-<fullyQualifiedTypeName name="saveMyHeart.Heart"/>
 <fullyQualifiedTypeName name="info.gridworld.actor.Critter"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="info.gridworld.grid.Location"/>
 <fullyQualifiedTypeName name="info.gridworld.actor.Actor"/>
 <fullyQualifiedTypeName name="saveMyHeart1.WhiteBloodCell"/>
+<fullyQualifiedTypeName name="info.gridworld.grid.Location"/>
+<fullyQualifiedTypeName name="saveMyHeart1.Bacteria1"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="saveMyHeart.Heart"/>
 </qualifiedTypeNameHistroy>
