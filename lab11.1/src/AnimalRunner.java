@@ -20,6 +20,9 @@ public class AnimalRunner {
 			myAnimal.speak();
 		}*/ 
 		
+		/* Question 1.2
+		If you try to cast a cat object to a dog, it will not work. The cat and dog do not have an
+		interface for all methods, like toString() and the constructor. Thus, you cannot cast from one to another.
 		Dog d1 = new Dog("Fred");
 	    d1.speak();
 	    Object obj = new Dog("Connie");
@@ -29,6 +32,8 @@ public class AnimalRunner {
 	    
 	    Cat myCat = new Cat("Will");
 	    Dog myDog = (Dog) myCat;
+	    */
+		
 	}
 
 }
