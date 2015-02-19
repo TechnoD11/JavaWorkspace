@@ -28,7 +28,9 @@ public class Bacteria1 extends Bacteria{
 			int direction = 180 - loc.getDirectionToward(getWhiteBloodCellLocation());
 			Location next = loc.getAdjacentLocation(direction);
 			this.setDirection(loc.getDirectionToward(getHeartLocation()));
-			moveTo(next);
+			if(getGrid().isValid(next)){
+				moveTo(next);	
+			}
 		}
 		else{ //if not
 			Location next = loc.getAdjacentLocation(loc.getDirectionToward(getHeartLocation()));
@@ -41,9 +43,9 @@ public class Bacteria1 extends Bacteria{
 	public boolean isWhiteBloodCellSeen(){ //determines if the bacteria sees the white blood cell
 		int colDif = Math.abs(getLocation().getCol() - getWhiteBloodCellLocation().getCol());
 		int rowDif = Math.abs(getLocation().getRow() - getWhiteBloodCellLocation().getRow());
-		if(colDif > 2 || rowDif > 2){ //if the location is within 2 units (row or column)
-			return false;
+		if(colDif <= 2 && rowDif <= 2){ //if the location is within 2 units (row or column)
+			return true;
 		}
-		return true; 
+		return false; 
 	}
 }

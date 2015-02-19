@@ -11,9 +11,9 @@ public class SaveMyHeart1Runner {
 		Heart myHeart = new Heart();
 		
 		Bacteria1 stuff = new Bacteria1();
-		world.add(new Location(1,1), stuff);
-		world.add(new Location(5,8), myHeart);
-		world.add(new Location(5,6), new WhiteBloodCellCritter());
+		world.add(new Location(6,8), stuff);
+		world.add(new Location(5,5), myHeart);
+		world.add(new Location(5,7), new WhiteBloodCellCritter());
 		world.show();
 	}
 
