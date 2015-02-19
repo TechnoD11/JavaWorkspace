@@ -1,3 +1,7 @@
+/**
+ * @author Derek Wider
+ * Programming Assignment 8
+ */
 package saveMyHeart1;
 
 import java.awt.Color;
