@@ -17,7 +17,9 @@
 <fullyQualifiedTypeName name="saveMyHeart1.Bacteria1"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="saveMyHeart.Heart"/>
-<fullyQualifiedTypeName name="java.awt.Rectangle"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="RectangleComparator"/>
+<fullyQualifiedTypeName name="java.awt.Rectangle"/>
 </qualifiedTypeNameHistroy>
