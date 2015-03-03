@@ -26,7 +26,7 @@ public class Bacteria1 extends Actor {
 		if (findHeartLocation() == null){
 			return;// if there is no heart, then do nothing
 		}
-		if (withenWBCDistance() && !simulationEnded) { //if its close to the white blood cell
+		else if(withenWBCDistance() && !simulationEnded) { //if its close to the white blood cell
 			this.setDirection((this.getLocation().getDirectionToward(findCellLocation()) + 180) % 360); //determine opposite direction
 			Location locer = this.getLocation().getAdjacentLocation(this.getDirection());
 			if (getGrid().isValid(locer)){ //check to make sure new location is valid
@@ -34,17 +34,18 @@ public class Bacteria1 extends Actor {
 			}
 			return;
 		}
-		if (nextToHeartLocation(findHeartLocation())) {// if you are next to the heart
-			for (Actor thisActor : getGrid().getNeighbors(this.getLocation())) {
-				if (thisActor instanceof Heart){
-					thisActor.setColor(Color.BLACK);
-				}
-				simulationEnded = true;// turn it black
-			}
-		}
-		else {
+		
+		else if(!simulationEnded){
 			this.setDirection(this.getLocation().getDirectionToward(findHeartLocation()));// else, set your direction
 			moveTo(this.getLocation().getAdjacentLocation(getDirection()));
+			if (nextToHeartLocation(findHeartLocation())) {// if you are next to the heart
+				for (Actor thisActor : getGrid().getNeighbors(this.getLocation())) {
+					if (thisActor instanceof Heart){
+						thisActor.setColor(Color.BLACK);
+					}
+					simulationEnded = true;// turn it black
+				}
+			}
 		}
 	}
 	public Location findHeartLocation() { //finds the location of the heart
