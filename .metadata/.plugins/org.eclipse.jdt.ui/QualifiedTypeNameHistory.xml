@@ -13,7 +13,6 @@
 <fullyQualifiedTypeName name="info.gridworld.actor.Critter"/>
 <fullyQualifiedTypeName name="info.gridworld.actor.Actor"/>
 <fullyQualifiedTypeName name="saveMyHeart1.WhiteBloodCell"/>
-<fullyQualifiedTypeName name="info.gridworld.grid.Location"/>
 <fullyQualifiedTypeName name="saveMyHeart1.Bacteria1"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="saveMyHeart.Heart"/>
@@ -22,4 +21,5 @@
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="RectangleComparator"/>
 <fullyQualifiedTypeName name="java.awt.Rectangle"/>
+<fullyQualifiedTypeName name="info.gridworld.grid.Location"/>
 </qualifiedTypeNameHistroy>
