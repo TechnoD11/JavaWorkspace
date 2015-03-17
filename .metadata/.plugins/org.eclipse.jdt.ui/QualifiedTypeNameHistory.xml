@@ -10,16 +10,16 @@
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="saveMyHeart.Bacteria"/>
-<fullyQualifiedTypeName name="info.gridworld.actor.Critter"/>
-<fullyQualifiedTypeName name="info.gridworld.actor.Actor"/>
 <fullyQualifiedTypeName name="saveMyHeart1.WhiteBloodCell"/>
 <fullyQualifiedTypeName name="saveMyHeart1.Bacteria1"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="saveMyHeart.Heart"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="RectangleComparator"/>
 <fullyQualifiedTypeName name="java.awt.Rectangle"/>
+<fullyQualifiedTypeName name="info.gridworld.actor.Critter"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="info.gridworld.actor.Actor"/>
 <fullyQualifiedTypeName name="info.gridworld.grid.Location"/>
 </qualifiedTypeNameHistroy>
