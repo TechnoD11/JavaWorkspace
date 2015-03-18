@@ -19,6 +19,7 @@
 <fullyQualifiedTypeName name="RectangleComparator"/>
 <fullyQualifiedTypeName name="java.awt.Rectangle"/>
 <fullyQualifiedTypeName name="info.gridworld.actor.Critter"/>
+<fullyQualifiedTypeName name="info.gridworld.actor.Rock"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="info.gridworld.actor.Actor"/>
 <fullyQualifiedTypeName name="info.gridworld.grid.Location"/>
