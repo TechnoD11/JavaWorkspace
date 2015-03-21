@@ -1,12 +1,12 @@
 /**
  * 
  * @author Derek Wider
- * I am the author who originally wrote all this code by myself with no help from anyone
+ * APCS Lab 13.1
  *
  */
 public class Card {
-	private String name;
-
+	protected String name;
+	
 	public Card() {
 		name = "";
 	}
@@ -25,5 +25,11 @@ public class Card {
 
 	public String format() {
 		return "Card holder: " + name;
+	}
+	public String toString(){ //return card name
+		return "Card[name = " + name + "]";
+	}
+	public boolean equals(Card other){ //compare card names
+		return other instanceof Card && name.equals(other.getName());
 	}
 }
