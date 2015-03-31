@@ -5,11 +5,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Derek\workspace\JavaWorkspace\PixLabMarch2015"/>
 			<item value="C:\Users\Derek\workspace\JavaWorkspace\Lab13.1"/>
 			<item value="C:\Users\Derek\workspace\JavaWorkspace\GridWorldProj2015"/>
 			<item value="C:\Users\Derek\workspace\JavaWorkspace\Magpie"/>
 			<item value="C:\Users\Derek\workspace\JavaWorkspace\Lab11.2"/>
-			<item value="C:\Users\Derek\workspace\JavaWorkspace\lab11.1"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
