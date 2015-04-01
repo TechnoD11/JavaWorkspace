@@ -5,31 +5,38 @@
 package critterCrab;
 
 import java.util.ArrayList;
+
+import info.gridworld.actor.Actor;
 import info.gridworld.actor.Critter;
+import info.gridworld.grid.Grid;
 import info.gridworld.grid.Location;
 
 public class QuickCrab extends CrabCritter{
+	private ArrayList<Location> locations; //for holding the locations to return
 	
-	public ArrayList<Location> getMoveLocations() { //creates array of move locations
-		ArrayList<Location> locations = new ArrayList<Location>();
-		int[] directions = {this.getDirection() - 90, this.getDirection() + 90}; //gets left and right directions to use in array
-		for (Location location : getLocationsInDirections(directions)) { //iterate through the getLocationsInDirections arraylist
-			/*if (getGrid().get(location) == null){ //if the locations directly left and right are valid
-				locations.add(location); //add them
-			}*/
-			//&& getGrid().get(location.getAdjacentLocation(location.getDirectionToward(getLocation()) - 180)) == null)
-			if (getGrid().isValid(location.getAdjacentLocation(location.getDirectionToward(getLocation()) - 180))){
-				if(getGrid().get(location) == null){	
-					locations.add(location.getAdjacentLocation(location.getDirectionToward(getLocation()) - 180)); //if the location 2 to the right is valid and is empty, add it
-				}
-			}
-			/*if (getGrid().isValid(new Location(location.getRow(), location.getCol() - 1)) && getGrid().get(new Location(location.getRow(), location.getCol() - 1)) == null) {
-				if(getGrid().get(location) == null){
-					locations.add(new Location(location.getRow(), location.getCol() - 1)); //if the location 2 to the left is valid and empty, add it
-				}
-			}*/
+	public QuickCrab(){ //calls super constructor, then constructs the arraylist
+		super();
+		locations = new ArrayList<Location>();
+	}
+	public ArrayList<Location> getMoveLocations() { //overrides Crabcritter method
+		ArrayList<Location> locations = new ArrayList<Location>(); //generate the arraylist
+		checkLocation(getDirection() - 90); //call the checkLocation method with the left direction 
+		checkLocation(getDirection() + 90); //then calls with direction to the right
+
+		if (locations.size() > 0) { //if there is a valid move location generated, return it (them)
+			return locations;
 		}
-		return locations; //return the locations
+		return super.getMoveLocations(); //else, call CrabCritter's getMoveLocations()
 	}
 
+	private void checkLocation(int direction) { //checks and adds the location 2 spaces away in a given direction
+		Location loc = getLocation().getAdjacentLocation(direction); //get the location adjacent to current location in specified direction
+		if (getGrid().isValid(loc) && getGrid().get(loc) == null) { //if its valid and has no actor in it
+			loc = loc.getAdjacentLocation(direction); //get the adjacent location to that one
+			if (getGrid().isValid(loc) && getGrid().get(loc) == null){ //if this new location exists and has no actor in it
+				locations.add(loc); //add the new location (2 away from starting) to the arraylist
+			}
+		}
+	}
 }
+
