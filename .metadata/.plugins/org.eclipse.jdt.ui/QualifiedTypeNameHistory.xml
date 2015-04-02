@@ -25,4 +25,5 @@
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="info.gridworld.actor.Actor"/>
 <fullyQualifiedTypeName name="info.gridworld.grid.Grid"/>
+<fullyQualifiedTypeName name="PermutationCounter"/>
 </qualifiedTypeNameHistroy>
