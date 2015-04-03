@@ -11,18 +11,18 @@ public class PermutationCounter {
 	}
 	
 	public long getCount(){
-		n--; //decriment first, allows recursion
+		n--; //decrement first, allows recursion
 		if(n <= 1){ //if its less than or equal to 1, return 1 (base case)
 			return 1;
 		}
 		return n * getCount(); //n * getCount() is recursion, returns n * (n-1) * (n-2)...
 	}
-	public long getCountIterative(){
-		n--;
+	public long getCountIterative(){ 
+		n--; //decrement first, because of recursion
 		long perm = 1;
-		for(int i = n; i > 0; i--){
-			perm = perm * i;
+		for(int i = n; i > 0; i--){ //iterate through n numbers
+			perm = perm * i; //multiply by each
 		}
-		return perm;
+		return perm; 
 	}
 }

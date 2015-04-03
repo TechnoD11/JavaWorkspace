@@ -26,4 +26,5 @@
 <fullyQualifiedTypeName name="info.gridworld.actor.Actor"/>
 <fullyQualifiedTypeName name="info.gridworld.grid.Grid"/>
 <fullyQualifiedTypeName name="PermutationCounter"/>
+<fullyQualifiedTypeName name="Arithmetic"/>
 </qualifiedTypeNameHistroy>
