@@ -4,11 +4,12 @@
  * APCS Programming Assignment 12
  *
  */
+
+//<T> denotes that Node is a generic class (implicit parameters are of type object unless denoted with <> brackets when constructing new node)
 public class Node<T> {
 
-	private T info; // protected instead of private, allowing the NodeList
-						// class access
-	protected Node<T> next;
+	private T info; 
+	private Node<T> next;
 
 	public Node(T input) {
 		info = input;
