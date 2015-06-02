@@ -70,7 +70,9 @@ public class Tree<T extends Comparable<T>> {
 	 * 
 	 */
 	private void deleteTwoKids(){
-		
+		if(current.getRight() != null){
+			
+		}
 	}
 	/**
 	 * 
