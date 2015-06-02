@@ -19,20 +19,52 @@ public class Tree<T extends Comparable<T>> {
 	 * 
 	 * @param val
 	 */
-	public void delete(int val){
-		
+	public void delete(T val){
+		find(val);
+		if(previous.getLeft() == null && previous.getRight() == null){
+			deleteNoKids();
+		}
+		else if(previous.getLeft() == null && previous.getRight() != null){
+			deleteOneKid();
+		}
+		else if(previous.getLeft() != null && previous.getRight() == null){
+			deleteOneKid();
+		}
+		else{
+			deleteTwoKids();
+		}
 	}
 	/**
 	 * 
 	 */
 	private void deleteNoKids(){
-		
+		if(previous.getLeft().getInfo().compareTo(current.getInfo()) == 0){
+			previous.setLeft(null);
+		}
+		else{
+			previous.setRight(null);
+		}
 	}
 	/**
 	 * 
 	 */
 	private void deleteOneKid(){
-		
+		if(previous.getLeft().getInfo().compareTo(current.getInfo()) == 0){
+			if(current.getLeft() == null){
+				previous.setLeft(current.getRight());
+			}
+			else{
+				previous.setLeft(current.getLeft());
+			}
+		}
+		else{
+			if(current.getLeft() == null){
+				previous.setLeft(current.getRight());
+			}
+			else{
+				previous.setLeft(current.getLeft());
+			}
+		}
 	}
 	/**
 	 * 
@@ -65,8 +97,22 @@ public class Tree<T extends Comparable<T>> {
 	 * 
 	 * @param val
 	 */
-	private void find(int val){
-		
+	private void find(T val){
+		if(current == null){
+			return;
+		}
+		if(current.getInfo().compareTo(val) < 0){
+			previous = current;
+			current = current.getLeft();
+		}
+		else if(current.getInfo().compareTo(val) > 0){
+			previous = current;
+			current = current.getRight();
+		}
+		else if(current.getInfo().equals(val)){
+			return;
+		}
+		find(val);
 	}
 	/**
 	 * maybe use private method addchild 
@@ -78,7 +124,13 @@ public class Tree<T extends Comparable<T>> {
 			root = newNode;
 			return;
 		}
-		if()
+		find(val);
+		if(previous.getInfo().compareTo(val) < 0){
+			previous.setLeft(newNode);
+		}
+		else{
+			previous.setRight(newNode);
+		}
 	}
 	/**
 	 * 
