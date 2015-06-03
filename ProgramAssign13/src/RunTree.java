@@ -1,7 +1,7 @@
 class RunTree {
 	public static void main(String args[]) {
 		Tree atree = new Tree();
-		
+	
 		atree.insert(85);
 		atree.insert(98);
 		atree.insert(50);
@@ -20,7 +20,7 @@ class RunTree {
 		atree.inorder();
 		atree.preorder();
 		atree.postorder();
-		
+	
 		atree.delete(45);
 		atree.delete(53);
 		atree.inorder();
@@ -30,6 +30,8 @@ class RunTree {
 		
 		atree.delete(85);
 		atree.inorder();
+		
+		
 	}
 }
 /******************************** output **********************************

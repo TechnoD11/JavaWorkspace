@@ -1,3 +1,8 @@
+/**
+ * 
+ * @author Derek Wider
+ * Programming Assignment 13
+ */
 //<T> denotes that Node is a generic class (implicit parameters are of type object unless denoted with <> brackets when constructing new node)
 public class Node<T extends Comparable<T>> {
 
