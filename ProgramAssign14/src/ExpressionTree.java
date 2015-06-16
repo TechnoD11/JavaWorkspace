@@ -4,7 +4,7 @@
  *
  */
 public class ExpressionTree {
-	private TreeNode head;
+	private TreeNodeGeneric head;
 	private int counter;
 	public ExpressionTree(){
 		head = null;
@@ -15,7 +15,7 @@ public class ExpressionTree {
 		counter = postfix.length()-1;
 	}
 	private void treeRecursion(String postfix){ //maybe create an interface here
-		TreeNode<T> temp = new TreeNode<T>(postfix.charAt(counter));
+		TreeNodeGeneric<T> temp = new TreeNodeGeneric<T>(postfix.charAt(counter));
 	}
 	
 }
