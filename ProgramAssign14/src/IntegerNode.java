@@ -5,11 +5,15 @@
  *
  */
 public class IntegerNode implements TreeNode{
-
+	private int info;
+	
+	public IntegerNode(int value){
+		info = value;
+	}
+	
 	@Override
 	public int evaluate() {
-		// TODO Auto-generated method stub
-		return 0;
+		return info;
 	}
 
 	@Override
