@@ -1,7 +1,10 @@
 /**
  * 
  * @author Derek Wider
- *
+ * Programming Assignment 14
+ * 
+ * A simple Stacknode - this class is used when converting an expression to a postfix expression. Features standard stack methods, listed below. 
+ * the info is of type character. All members of an expression - the digits and the operators - are stored as characters. 
  */
 public class StackNode {
 	private char info; 

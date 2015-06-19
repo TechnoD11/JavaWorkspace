@@ -1,22 +1,41 @@
-import unusedClasses.TreeNodeGeneric;
-import unusedClasses.TreeStackNode;
-import unusedClasses.TreeStackNodeInt;
+
 
 /**
  * 
  * @author Derek Wider
- *
+ * Programming Assignment 14
+ * 
+ * 	This class handles the loading and manipulation of the expression tree. The Tree is loaded using a postfix expression (see loadTree() ). 
+ * The tree can then be evaluated, and the infix expression of the tree can be generated. 
+ * 
+ * The stack portion of the class can also be pushed/popped. 
  */
 public class ExpressionTree {
 	private TreeNode root; //head of the tree
 	private TreeNode head; //head of the stack
-	private TreeNode current;
-	private TreeNode previous;
+	/**
+	 * Constructor. Sets the stack and the tree to null
+	 */
 	public ExpressionTree(){
 		root = null;
 		head = null;
 	}
-	
+	/**
+	 * 	Loads an expression tree from a postfix String. 
+	 * 	Works by using a stack. I'll explain here:
+	 * 	First, a for loop iterates the length of the postfix expression (beginning to end of string). 
+	 * 	The character at this point in the postfix is then found.
+	 * 	If the character is a number (1-9), then it is loaded into a DoubleNode (implements TreeNode) and pushed into the stack.
+	 * 	If the character is an operator:
+	 * 		A new operator node (implements TreeNode) is created with the operator as the info.
+	 * 		Then the stack is popped, and the node from the stack is set to the right child of the new node
+	 * 		The stack is then popped again, and this node is attached to the left child of the new node
+	 * 		Then, the OperatorNode that was just created is pushed into the stack. 
+	 * This process repeats until the end of the string is reached.
+	 * By then, there should only be one node in the stack, which is also conveniently the root of the expression tree. 
+	 * The last line assigns the root of the tree to last node in the stack. 
+	 * @param postfix
+	 */
 	public void loadTree(String postfix){
 		for(int i = 0; i < postfix.length(); i++){
 			char charAt = postfix.charAt(i);
@@ -24,39 +43,17 @@ public class ExpressionTree {
 			if(intVal >= 49 && intVal <= 57){
 				DoubleNode temp = new DoubleNode(intVal - 48);
 				push(temp);
-				System.out.println("pushing new node with value of: " + (intVal - 48));
 			}
 			else{
 				TreeNode temp = new OperatorNode(charAt);
-				System.out.println("in operator with operator: " + charAt);
 				TreeNode fromStack = pop();
-				if(fromStack != null && fromStack.isIntegerNode()){
-					System.out.println("just popped a " + fromStack.getInfoNumber());
-				}
-				else if(fromStack != null){
-					System.out.println("just popped a " + fromStack.getInfoSymbol());
-				}
-				else{
-					System.out.println("just popped a null from the stack!");
-				}
 				temp.setRight(fromStack);
 				fromStack = pop();
-				if(fromStack != null && fromStack.isIntegerNode()){
-					System.out.println("just popped a " + fromStack.getInfoNumber());
-				}
-				else if(fromStack != null){
-					System.out.println("just popped a " + fromStack.getInfoSymbol());
-				}
-				else{
-					System.out.println("just popped a null from the stack!");
-				}
 				temp.setLeft(fromStack);
 				push(temp);
 			}
 		}
 		root = pop();
-		System.out.println("root of the tree is: " + root.getInfoSymbol());
-		current = root;
 	}
 	
 	/**
@@ -69,6 +66,10 @@ public class ExpressionTree {
 		}
 		head = node;
 	}
+	/**
+	 * Pops an item from the stack. 
+	 * @return
+	 */
 	public TreeNode pop(){
 		if(head == null){
 			return null;
@@ -77,70 +78,18 @@ public class ExpressionTree {
 		head = head.getNext();
 		return temp;
 	}
+	/**
+	 * Evaluates this tree. Calls the evaluates of the nodes in the tree. Yes, this evaluates in just one line. 
+	 * @return the evaluation of the tree
+	 */
 	public double evaluate(){
 		return root.evaluate();
 	}
+	/**
+	 * Prints an infix representation of this expression (with parenthesis). Calls the toStrings() of the nodes in the tree. 
+	 * @return the infix expression
+	 */
 	public String infix(){
 		return root.toString();
 	}
-	public char goLeft(){
-		char val;
-		if(current.getLeft() != null && !current.getLeft().isIntegerNode()){
-			val = current.getLeft().getInfoSymbol();
-		}
-		else if(current.getLeft() != null){
-			val = (char) current.getLeft().getInfoNumber();
-		}
-		else{
-			val = 'n';
-		}
-		current = current.getLeft();
-		return val;
-	}
-	public char goRight(){
-		char val;
-		if(current.getRight() != null && !current.getRight().isIntegerNode()){
-			val = current.getRight().getInfoSymbol();
-		}
-		else if(current.getRight() != null){
-			val = (char) current.getRight().getInfoNumber();
-		}
-		else{
-			val = 'n';
-		}
-		current = current.getRight();
-		return val;
-	}
-	public void resetTraverse(){
-		current = root;
-	}
-	public char getCurrent(){
-		return current.getInfoSymbol();
-	}
-	/*
-	else{
-		treeStackNodeChar temp = new treeStackNodeChar(charAt);
-	}
-	 
-	 */
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	/*
-	public void generateTree(String postfix){
-		counter = postfix.length()-1;
-	}
-	private void treeRecursion(String postfix){ //maybe create an interface here
-		TreeNodeGeneric<T> temp = new TreeNodeGeneric<T>(postfix.charAt(counter));
-	}
-	*/
 }
