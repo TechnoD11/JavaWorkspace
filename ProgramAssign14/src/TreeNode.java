@@ -5,12 +5,18 @@
  *
  */
 public interface TreeNode {
-	public int evaluate();
+	public double evaluate();
 	public TreeNode getLeft();
 	public TreeNode getRight();
-	public void setLeft();
-	public void setRight();
-	public void setInfo();
-	public int getInfoNumber();
-	public int getInfoSymbol();
+	public void setLeft(TreeNode node);
+	public void setRight(TreeNode node);
+	public double getInfoNumber();
+	public char getInfoSymbol();
+	void setInfo(char operator);
+	void setInfo(int number);
+	
+	public void setNext(TreeNode node);
+	public TreeNode getNext();
+	public boolean isIntegerNode();
+	public String toString();
 }

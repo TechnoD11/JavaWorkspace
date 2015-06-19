@@ -1,3 +1,6 @@
+package unusedClasses;
+import TreeNode;
+
 /**
  * 
  * @author Derek Wider
@@ -7,6 +10,8 @@
 public class TreeStackNodeChar implements TreeStackNode{
 	private char info;
 	private TreeStackNode next;
+	private TreeNode left;
+	private TreeNode right;
 	
 	public TreeStackNodeChar(char val){
 		info = val;

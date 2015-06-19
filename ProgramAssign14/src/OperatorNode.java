@@ -5,53 +5,100 @@
  *
  */
 public class OperatorNode implements TreeNode {
-
+	private TreeNode left;
+	private TreeNode right;
+	private TreeNode next;
+	private char info;
+	/**
+	 *  Constructor
+	 * @param operator
+	 */
+	public OperatorNode(char operator){
+		info = operator;
+		left = null;
+		right = null;
+		next = null;
+	}
+	
+	//Expression Tree methods below:
+	
 	@Override
-	public int evaluate() {
+	public double evaluate() {
+		double eval;
 		
-		return 0;
+		switch(info){
+			case '/': eval = (getLeft().evaluate() / getRight().evaluate()); break;
+			case '*': eval = (getLeft().evaluate() * getRight().evaluate()); break;
+			case '-': eval = (getLeft().evaluate() - getRight().evaluate()); break;
+			case '+': eval = (getLeft().evaluate() + getRight().evaluate()); break;
+			case '^': eval = (Math.pow(getLeft().evaluate(), getRight().evaluate())); break;
+			default : eval = 0; break;
+		}
+		return eval;
 	}
 
 	@Override
 	public TreeNode getLeft() {
-		// TODO Auto-generated method stub
-		return null;
+		return left;
 	}
 
 	@Override
 	public TreeNode getRight() {
-		// TODO Auto-generated method stub
-		return null;
+		return right;
 	}
 
 	@Override
-	public void setLeft() {
-		// TODO Auto-generated method stub
+	public void setLeft(TreeNode node) {
+		left = node;
+	}
+
+	@Override
+	public void setRight(TreeNode node) {
+		right = node;
+	}
+
+	//End Expression Tree methods
+	//Stack methods below
+	
+	@Override
+	public void setNext(TreeNode node) {
+		next = node;
+	}
+
+	@Override
+	public TreeNode getNext() {
+		return next;
+	}
+	
+	//Generic methods Below
+	@Override
+	public boolean isIntegerNode() {
+		return false;
+	}
+	
+	@Override
+	public void setInfo(char operator) {
+		info = operator;
+	}
+
+	@Override
+	public double getInfoNumber() {
+		return Integer.MAX_VALUE;
+	}
+
+	@Override
+	public char getInfoSymbol() {
+		return info;
+	}
+
+	@Override
+	public void setInfo(int number) {
 		
 	}
-
+	
 	@Override
-	public void setRight() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setInfo() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int getInfoNumber() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getInfoSymbol() {
-		// TODO Auto-generated method stub
-		return 0;
+	public String toString(){
+		return "(" + getLeft().toString() + info + getRight().toString() + ")";
 	}
 
 }
